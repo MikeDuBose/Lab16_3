@@ -1,0 +1,69 @@
+:host {
+    font-family: 'Arial';
+    font-size: 14px;
+    color: #333;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 8px 0;
+  }
+
+
+.completed {
+    text-decoration: line-through;
+    color: grey;
+  }
+
+  .editInput{
+    font-size: 14px;
+    color: #df3535;
+    font-family: 'Arial';
+  }
+
+  .btns{
+    border-radius: 2px;
+    background-color: rgb(176, 255, 29);
+    border-color: rgb(0, 0, 0);
+    font-family: 'Arial';
+    font-size:14px;
+  }
+
+  .btnsred{
+    border-radius: 2px;
+    background-color: rgb(255, 29, 29);
+    border-color: rgb(0, 0, 0);
+    font-family: 'Arial';
+    font-size:14px;
+  }
+
+  .center {
+    display: flex;
+    justify-content: center;
+  }
+
+  .header {
+    display:flex;
+    justify-content:center;
+    font-size:30;
+    color: #8d1bf8;
+  }
+
+  .tasks {
+    display:flex;
+    font-size:14;
+    font-weight:600;
+    color: #8d1bf8;
+  }
+
+  .background {
+    background-color: #c5d5ff;
+    opacity:0.8;
+  }

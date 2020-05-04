@@ -9,31 +9,46 @@
   
   <div class="background">
   <h1 class = "header">ToDo List</h1>
+  <h3 class = "header">Where you can help yourself!</h3>
   <br>
   <div class ="center">Here's where my search bar would go ________________________________</div>
   <br>
   <div class = "center">
   <table class>
     <tr>
+      <!--Button calls the addtask function and-->
+      <td><input type="text" placeholder="Example: Cut the grass" [(ngModel)]="task"/></td>
+      <td><button class="btns" (click)="addTask()">Submit</button>&nbsp;</td>
+    </tr>
+    <tr>
       <th>Status<br>(Click to Change)</th>
-      <th> </th>
       <th><br>Tasks</th>
     </tr>
     <!-- Viewing the array -->
     <tr *ngFor="let t of taskArray">
       <!--If the task is completed, then show the completed button.  If it's not completed, show "incomplete" in red.-->
       <td [hidden]="!t.completed"><button class="btns" *ngIf="t.completed" (click)="t.completed = !completeTask()">Complete</button></td>
+
       <td [hidden]="t.completed"><button class="btnsred" *ngIf="!t.completed" (click)="t.completed = completeTask()">Incomplete</button></td>
       <!--Strikethrough or not-->
       <td [hidden]="t.completed"><div class="tasks">{{t.task}}</div></td>
+
       <td [hidden]="!t.completed" class="completed">{{t.task}}</td>
+
       <!--If it's not being edited, then show the edit button-->
+
       <td [hidden]="t.editing"><button class="btns" *ngIf="!t.editing" (click)="t.editing = editingTask()">Edit</button></td>
+
       <!--When it IS being edited, show submit and cancel-->
-      <td [hidden]="!t.editing"><input type="text" class="editInput" placeholder="Edit task" [(ngModel)]="taskEdit"/></td>
+
+      <td [hidden]="!t.editing"><input type="text" class="editText" placeholder="Edit task" [(ngModel)]="taskEdit"/></td>
+
       <td [hidden]="!t.editing"><button class="btns" *ngIf="t.editing" (click)="editTask(t, taskEdit);t.editing = !editingTask()">Submit</button>&nbsp;</td>
+
       <!--Finds the index of the task you click on and deletes it-->
+
       <td><button class="btnsred" (click)="removeTask(taskArray.indexOf(t))">Delete</button></td>
+      
     </tr>
   </table>
   </div>
@@ -50,11 +65,6 @@
   <table>
     <tr>
       <td><b>Add a new task!</b></td>
-    </tr>
-    <tr>
-      <!--Button calls the addtask function and-->
-      <td><input type="text" placeholder="Example: Cut the grass" [(ngModel)]="task"/></td>
-      <td><button class="btns" (click)="addTask()">Submit</button>&nbsp;</td>
     </tr>
   </table>
   </div>

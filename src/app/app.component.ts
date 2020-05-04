@@ -35,7 +35,7 @@ export class AppComponent {
       taskId: 4,
       task:'Stop playing Animal Crossing', 
       beingEdited: false,
-      completed: false,
+      completed: true,
     },
     {
       taskId: 5,
@@ -66,18 +66,17 @@ export class AppComponent {
   completeTask = function():boolean{
     return true;
   }
-  //Removes task at index
-  removeTask = function(index:number):void{
-    this.taskArray.splice(index, 1)
-  }
+
   //Is the task being currently edited?  This helps show views based on their edited/editing status
   editingTask = function():boolean{
     return true;
   }
+
   //This was rough -- I couldn't figure out how to pass the string from the forms for a long time - finally figured it out
   editTask = function(t:Todo, newName:string){
     t.task = newName;
   }
+
   //Adds a new task to the array
   addTask = function(){
     //creates a new task with the todo params defined in the interface
@@ -88,6 +87,11 @@ export class AppComponent {
       this.task='';
       //increment the ID
       this.taskId++;
+  }
+
+  //Removes task at index
+  removeTask = function(index:number):void{
+    this.taskArray.splice(index, 1)
   }
 
   
